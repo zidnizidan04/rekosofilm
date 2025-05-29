@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picturez Landing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Orbitron', sans-serif;
+        background: url('https://images.unsplash.com/photo-1581090700227-1e8eaf0c3263?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container {
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 50, 0.5);
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    h1, p {
+        margin: 20px;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        background-color: #00aaff;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #0088cc;
+    }
+</style>
+
+</head>
+<body>
+    <div class="container" id="page1">
+        <h1>Click Here</h1>
+        <button class="btn" onclick="goToPage(2)">Next</button>
+    </div><div class="container" id="page2" style="display:none">
+    <h1>Tap Continue to Watch the Movie</h1>
+    <button class="btn" onclick="goToPage(3)">Continue</button>
+</div>
+
+<div class="container" id="page3" style="display:none">
+    <h1>Enjoy the Show!</h1>
+    <p><a href="https://youtu.be/hHw3e28F9j4?si=ZPUO_QUyCs84mnzt" target="_blank" style="color: #00ffff; text-decoration: none;">Watch the Movie</a></p>
+</div>
+
+<script>
+    function goToPage(pageNumber) {
+        for (let i = 1; i <= 3; i++) {
+            document.getElementById('page' + i).style.display = 'none';
+        }
+        document.getElementById('page' + pageNumber).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
